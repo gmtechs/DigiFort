@@ -1,0 +1,82 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer base {
+  body {
+    @apply bg-gradient-to-b from-green-50 to-green-100 min-h-screen font-sans text-gray-800 antialiased;
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-6xl mx-auto px-4 py-8 flex flex-col items-center space-y-8;
+  }
+
+  .card {
+    @apply bg-white rounded-xl shadow-lg p-6 w-full transition-all duration-300 hover:shadow-2xl hover:scale-[1.01] space-y-4;
+  }
+
+  h1 {
+    @apply text-4xl md:text-6xl font-extrabold text-center text-green-800 mb-12;
+  }
+
+  h2 {
+    @apply text-2xl font-semibold text-green-800 mb-6;
+  }
+
+  .form-group {
+    @apply space-y-4;
+  }
+
+  .input {
+    @apply w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-green-500 transition duration-200 
+    disabled:bg-gray-100 disabled:cursor-not-allowed;
+  }
+
+  .button {
+    @apply w-full px-4 py-2 bg-green-600 text-white font-medium rounded-md hover:bg-green-700 
+    focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50 transition-all duration-200
+    disabled:opacity-50 disabled:cursor-not-allowed active:scale-[0.98];
+  }
+
+  .loading {
+    @apply text-center text-green-600 text-xl mt-10 animate-pulse;
+  }
+
+  .status-badge {
+    @apply px-3 py-1 rounded-full text-sm font-medium inline-flex items-center gap-1;
+  }
+
+  .status-certified {
+    @apply bg-green-100 text-green-800;
+  }
+
+  .status-pending {
+    @apply bg-yellow-100 text-yellow-800;
+  }
+
+  .qr-code {
+    @apply flex justify-center mt-4;
+  }
+
+  .crop-details {
+    @apply space-y-4 w-full max-w-2xl mx-auto;
+  }
+
+  .back-button {
+    @apply mt-8 block w-full px-4 py-2 bg-gray-600 text-white font-medium rounded-md hover:bg-gray-700 
+    focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50 transition-all duration-200 
+    text-center active:scale-[0.98];
+  }
+
+  .grid-layout {
+    @apply grid gap-8 w-full;
+  }
+
+  @screen md {
+    .grid-layout {
+      @apply grid-cols-2;
+    }
+  }
+}
